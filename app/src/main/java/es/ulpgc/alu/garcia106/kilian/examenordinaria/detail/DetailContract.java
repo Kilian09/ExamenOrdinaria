@@ -2,6 +2,8 @@ package es.ulpgc.alu.garcia106.kilian.examenordinaria.detail;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.alu.garcia106.kilian.examenordinaria.data.RepositoryContract;
+
 interface DetailContract {
 
   interface View {
@@ -22,6 +24,8 @@ interface DetailContract {
 
   interface Model {
     String fetchData();
+
+    void getPosition(RepositoryContract.LoadPositionCallback callback);
   }
 
   interface Router {
@@ -29,6 +33,6 @@ interface DetailContract {
 
     void passDataToNextScreen(DetailState state);
 
-    DetailState getDataFromPreviousScreen();
+    DetailState getDataFromMasterScreen();
   }
 }

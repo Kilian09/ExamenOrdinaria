@@ -26,6 +26,8 @@ public class MasterActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_master);
 
+    getSupportActionBar().setTitle("Master");
+
     addButton = findViewById(R.id.addButton);
     addButton.setOnClickListener(new View.OnClickListener() {
       @Override

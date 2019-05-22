@@ -13,11 +13,18 @@ public class DetailActivity
   public static String TAG = DetailActivity.class.getSimpleName();
 
   private DetailContract.Presenter presenter;
+  private TextView idNumberText, positionNumberText;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_detail);
+
+    getSupportActionBar().setTitle("Detail");
+
+    idNumberText = findViewById(R.id.id_number_text);
+    positionNumberText = findViewById(R.id.position_number_text);
+
 
     // do the setup
     DetailScreen.configure(this);
@@ -42,5 +49,15 @@ public class DetailActivity
 
     // deal with the data
    // ((TextView) findViewById(R.id.data)).setText(viewModel.data);
+
+    int id = viewModel.currentItem.itemId;
+    idNumberText.setText(Integer.toString(id));
+    positionNumberText.setText(Integer.toString(viewModel.position));
+
+  }
+
+  @Override
+  public void onBackPressed() {
+    this.finish();
   }
 }

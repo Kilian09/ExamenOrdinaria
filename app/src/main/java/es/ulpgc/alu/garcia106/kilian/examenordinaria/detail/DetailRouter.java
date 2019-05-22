@@ -29,7 +29,7 @@ public class DetailRouter implements DetailContract.Router {
   }
 
   @Override
-  public DetailState getDataFromPreviousScreen() {
+  public DetailState getDataFromMasterScreen() {
     DetailState state = mediator.getDetailState();
     return state;
   }

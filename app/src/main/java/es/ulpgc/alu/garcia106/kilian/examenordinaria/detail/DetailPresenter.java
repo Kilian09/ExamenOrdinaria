@@ -4,6 +4,8 @@ import android.util.Log;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.alu.garcia106.kilian.examenordinaria.data.RepositoryContract;
+
 public class DetailPresenter implements DetailContract.Presenter {
 
   public static String TAG = DetailPresenter.class.getSimpleName();
@@ -50,10 +52,21 @@ public class DetailPresenter implements DetailContract.Presenter {
       viewModel.data = data;
     }
 */
+
+    if (viewModel.currentItem == null) {
+      DetailState state = router.getDataFromMasterScreen();
+      if (state != null) {
+        viewModel.currentItem = state.currentItem;
+      }
+    }
+    model.getPosition(new RepositoryContract.LoadPositionCallback() {
+      @Override
+      public void setItem(int position) {
+        viewModel.position = position;
+      }
+    });
     // update the view
     view.get().displayData(viewModel);
 
   }
-
-
 }
