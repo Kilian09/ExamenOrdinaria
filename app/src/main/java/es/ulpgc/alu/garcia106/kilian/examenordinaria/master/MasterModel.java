@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v4.app.FragmentActivity;
 
 import es.ulpgc.alu.garcia106.kilian.examenordinaria.data.Repository;
+import es.ulpgc.alu.garcia106.kilian.examenordinaria.data.RepositoryContract;
 
 public class MasterModel implements MasterContract.Model {
 
@@ -23,5 +24,15 @@ this.repository = repository;
   public String fetchData() {
     // Log.e(TAG, "fetchData()");
     return "Hello";
+  }
+
+  @Override
+  public void addNewitem(RepositoryContract.OnAddNewItemCallback callback){
+    repository.addNewItem(callback);
+  }
+
+  @Override
+  public void loadItemList(RepositoryContract.LoadItemListCallback callback){
+    repository.getItemList(callback);
   }
 }
