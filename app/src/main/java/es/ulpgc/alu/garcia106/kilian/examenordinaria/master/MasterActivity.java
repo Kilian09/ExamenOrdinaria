@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import es.ulpgc.alu.garcia106.kilian.examenordinaria.R;
+import es.ulpgc.alu.garcia106.kilian.examenordinaria.data.Item;
 
 public class MasterActivity
     extends AppCompatActivity implements MasterContract.View {
@@ -36,7 +37,8 @@ public class MasterActivity
     listAdapter = new MasterAdapter(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-
+        Item item = (Item) v.getTag();
+        presenter.onListItemClicked(item);
       }
     });
 

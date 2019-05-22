@@ -7,12 +7,16 @@ import java.lang.ref.WeakReference;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v4.app.FragmentActivity;
 
+import es.ulpgc.alu.garcia106.kilian.examenordinaria.data.Repository;
+
 public class DetailModel implements DetailContract.Model {
 
   public static String TAG = DetailModel.class.getSimpleName();
 
-  public DetailModel() {
+  private Repository repository;
 
+  public DetailModel(Repository repository) {
+    this.repository = repository;
   }
 
   @Override

@@ -7,6 +7,7 @@ import java.util.List;
 
 import es.ulpgc.alu.garcia106.kilian.examenordinaria.data.Item;
 import es.ulpgc.alu.garcia106.kilian.examenordinaria.data.RepositoryContract;
+import es.ulpgc.alu.garcia106.kilian.examenordinaria.detail.DetailState;
 
 public class MasterPresenter implements MasterContract.Presenter {
 
@@ -77,6 +78,14 @@ public class MasterPresenter implements MasterContract.Presenter {
         view.get().displayData(viewModel);
       }
     });
+  }
+
+  @Override
+  public void onListItemClicked(Item item){
+    DetailState state = new DetailState();
+    state.currentItem = item;
+    router.passDataToDetailScreen(state);
+    router.navigateToDetailScreen();
   }
 
 }

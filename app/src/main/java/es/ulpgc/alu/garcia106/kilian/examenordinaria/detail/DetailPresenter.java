@@ -35,7 +35,7 @@ public class DetailPresenter implements DetailContract.Presenter {
   @Override
   public void fetchData() {
     // Log.e(TAG, "fetchData()");
-
+/*
     // set passed state
     DetailState state = router.getDataFromPreviousScreen();
     if (state != null) {
@@ -49,7 +49,7 @@ public class DetailPresenter implements DetailContract.Presenter {
       // set initial state
       viewModel.data = data;
     }
-
+*/
     // update the view
     view.get().displayData(viewModel);
 

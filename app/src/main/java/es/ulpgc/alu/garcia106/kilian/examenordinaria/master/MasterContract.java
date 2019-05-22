@@ -2,7 +2,9 @@ package es.ulpgc.alu.garcia106.kilian.examenordinaria.master;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.alu.garcia106.kilian.examenordinaria.data.Item;
 import es.ulpgc.alu.garcia106.kilian.examenordinaria.data.RepositoryContract;
+import es.ulpgc.alu.garcia106.kilian.examenordinaria.detail.DetailState;
 
 interface MasterContract {
 
@@ -22,6 +24,8 @@ interface MasterContract {
     void fetchData();
 
     void onAddButtonClicked();
+
+    void onListItemClicked(Item item);
   }
 
   interface Model {
@@ -33,9 +37,9 @@ interface MasterContract {
   }
 
   interface Router {
-    void navigateToNextScreen();
+    void navigateToDetailScreen();
 
-    void passDataToNextScreen(MasterState state);
+    void passDataToDetailScreen(DetailState state);
 
     MasterState getDataFromPreviousScreen();
   }

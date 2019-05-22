@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ExamenOrdinaria</string>
+    <string name="position_text_label">Position</string>
+    <string name="item_text_label">Item</string>
 </resources>
