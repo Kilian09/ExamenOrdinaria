@@ -35,6 +35,7 @@ public class Repository implements RepositoryContract {
   public void addNewItem(OnAddNewItemCallback callback) {
     if (callback != null) {
       int id = itemList.size();
+      int position = itemList.size();
       itemList.add(new Item(id));
       callback.setItemList(itemList);
     }
@@ -51,10 +52,10 @@ public class Repository implements RepositoryContract {
 
 
   private int searchPosition() {
-    int position = 0;
-    for (int k =0; k<itemList.size();k++) {
-        position = itemList.get(k).position;
-      }
-      return position;
+    int p = 0;
+    for (Item item : itemList) {
+        p = item.position;
     }
+    return p;
   }
+}

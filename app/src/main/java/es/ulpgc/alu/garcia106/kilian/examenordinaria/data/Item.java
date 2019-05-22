@@ -8,5 +8,6 @@ public int position;
 
   public Item(int itemId){
     this.itemId = itemId;
+    this.position = 0;
   }
 }
