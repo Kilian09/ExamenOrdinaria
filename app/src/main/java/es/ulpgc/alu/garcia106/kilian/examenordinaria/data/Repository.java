@@ -49,13 +49,6 @@ public class Repository implements RepositoryContract {
 
   }
 
-  @Override
-  public void addOnePosition(int itemId, OnAddOneItemCallback callback) {
-    if (callback != null) {
-      callback.setItem(itemList.get(itemId), searchPosition());
-    }
-  }
-
 
   private int searchPosition() {
     int position = 0;

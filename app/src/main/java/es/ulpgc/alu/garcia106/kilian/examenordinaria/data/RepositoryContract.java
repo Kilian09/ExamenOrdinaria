@@ -16,9 +16,6 @@ public interface RepositoryContract {
     void setItem(int position);
   }
 
-  interface OnAddOneItemCallback {
-    void setItem(Item item, int position);
-  }
 
   void getItemList(LoadItemListCallback callback);
 
@@ -26,5 +23,4 @@ public interface RepositoryContract {
 
   void getPosition(LoadPositionCallback callback);
 
-  void addOnePosition(int itemId, OnAddOneItemCallback callback);
 }
